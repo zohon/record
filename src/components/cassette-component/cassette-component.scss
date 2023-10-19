@@ -1,0 +1,187 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  .content {
+    height: 600px;
+    width: 555px;
+
+    position: relative;
+    display: flex;
+
+    .item {
+      height: 600px;
+      width: 555px;
+      position: absolute;
+    }
+
+    .track {
+      position: absolute;
+      right: 45px;
+      top: 37px;
+      padding: 4px 0;
+      font-size: 14px;
+      width: 80%;
+      text-align: center;
+      box-shadow: 3px 1px grey;
+      background: white;
+      rotate: 2deg;
+    }
+
+    .icons {
+      position: absolute;
+      bottom: 68px;
+      left: 137px;
+      scale: 0.48;
+      display: flex;
+
+      .icon {
+        cursor: pointer;
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  .cassette {
+    position: absolute;
+    scale: 0.68;
+    top: 105px;
+    left: 66px;
+    overflow: hidden;
+
+    .line-L {
+      width: 140px;
+      height: 47px;
+      border-bottom: 5px solid #544035;
+      position: absolute;
+      bottom: 2px;
+      left: -76px;
+      transform-origin: top right;
+    }
+
+    .line-R {
+      width: 125px;
+      height: 47px;
+      border-bottom: 5px solid #544035;
+      position: absolute;
+      bottom: 80px;
+      left: 263px;
+      transform-origin: bottom right;
+    }
+
+    &.play {
+      .disc {
+        animation: play 3s infinite linear forwards;
+      }
+      .item-L,
+      .item-R {
+        transition: rotate 0.3s linear;
+      }
+    }
+  }
+
+  .select {
+    cursor: pointer;
+  }
+
+  .items {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 283px;
+    width: 436px;
+
+    .item-L {
+      position: absolute;
+      left: 90px;
+      top: 85px;
+      transition: rotate 0.1s linear;
+    }
+
+    .item-R {
+      position: absolute;
+      right: 90px;
+      top: 85px;
+      transition: rotate 0.1s linear;
+    }
+
+    .band-L {
+      position: absolute;
+      left: 60px;
+      top: 60px;
+      width: 130px;
+      height: 128px;
+
+      .disc {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: -3px;
+        top: -6px;
+        border-radius: 100%;
+        background-color: #544035;
+      }
+    }
+
+    .band-R {
+      position: absolute;
+      left: 250px;
+      top: 60px;
+      width: 130px;
+      height: 128px;
+
+      .disc {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: -3px;
+        top: -6px;
+        border-radius: 100%;
+        background-color: #544035;
+      }
+    }
+
+    @keyframes play {
+      from {
+        rotate: 0deg;
+      }
+      to {
+        rotate: 360deg;
+      }
+    }
+  }
+
+  .dragable {
+    position: absolute;
+    top: 35px;
+    left: 170px;
+    width: 50px;
+    height: 100px;
+  }
+
+  .track-list {
+    position: absolute;
+    width: 370px;
+    top: 167px;
+    left: 459px;
+    background: #f5f5f4;
+    padding: 3px;
+
+    &:empty {
+      display: none;
+    }
+
+    .item {
+      margin: 2px 0;
+      &.active {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+}

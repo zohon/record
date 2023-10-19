@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/cassette-lecteur.esm.js"></script>
+    <script nomodule src="/build/cassette-lecteur.js"></script>
+    <style></style>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+
+        background-color: black;
+      }
+
+      @font-face {
+        font-family: 'mom';
+        src: url('/build/assets/Mom.ttf');
+      }
+
+      cassette-component {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        font-family: 'mom';
+      }
+
+      .infos {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        padding: 15px;
+        font-weight: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="infos">
+      <p>Click on the cassette player to select > files < to play (MP3)</p>
+      <p>Click + ctrl on the cassette player to select > folder < to play (MP3)</p>
+      <p>Drop file or folder on the cassette player to play it (MP3 files)</p>
+
+      <p>Click on play after cassette is loaded</p>
+    </div>
+
+    <cassette-component></cassette-component>
+  </body>
+</html>
